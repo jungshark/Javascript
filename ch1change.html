@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change</title>
+</head>
+<body>
+    <script>
+        // 자료형 변환
+        // 문자 -> 숫자로 변환
+        let str3 = "12345aaa";
+        let str4 = "123.123" ;
+        // 문자를 더 넣으면 22열을 출력했을때 NaN라고 나옴
+        // 20열을 써서 숫자로 바뀌긴 했는데 숫자가 아닌 문자가 포함됐기 때문에
+        console.log(typeof str3);
+        // 1. Number() 활용한 변환
+        //  : 소수점까지 포함해서 데이터를 변환, 숫자에 문자가 들어있으면 숫자가 안 됨(NaN 표시됨)
+        let num3 = Number(str3);
+        console.log(typeof num3);
+        console.log(num3);
+
+        let num5 = Number(str4);
+        console.log(num5);
+        // 2. perseInt() 활용한 변환
+        //  : 소수점을 제외하고 정수만 변환, 숫자에 문자가 포함되어 있다면 문자를 제외한 나머지만 숫자로 변환
+        let num4 = parseInt(str3);
+
+        //참고 - 소수점을 가진 문자를 실수형으로 변환할 때 사용(parseFloat) Float=실수(Int=정수)
+        console.log(parseFloat(str4)); // 34, 35열을 합쳐서 한 번에 선언도 가능!
+        console.log(num4);
+
+        let num6 = parseInt(str4);
+        console.log(num6);
+
+
+        // 숫자 -> 문자로 변환
+        // 1. toString()
+        // num4 = null; // num4에 든 숫자를 null로 덮어쓰면 에러가 뜸(인식을 못 해 처리 불가능)
+        let str5 = num4.toString();
+        console.log(typeof str5);
+        console.log(str5); // Tip! colsole창에서 숫자는 파란색, 문자는 검은색으로 표시됨
+
+        // 2. String() <- 이걸 많이 쓸 듯
+        num4 = null; // null, undefined 등도 변환해서 처리 가능
+        let str6 = String(num4);
+        console.log(typeof str6);
+        console.log(str6);
+
+
+        // 빈 문자열
+        // 문자, 문자열의 차이
+        // 문자 = 'A' (알파벳 딱 1개)
+        // 문자열 = 'ASDF' (1개를 초과한 문자로 이루어진 것)
+        let str7 = ''; // 문자를 만들었는데 데이터는 비어있음
+    </script>
+</body>
+</html>

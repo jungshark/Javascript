@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+</head>
+<body>
+    <script>
+        // 1. if문
+        /* if(표현식){ <- 참이면
+            해당 영역 실행
+        } */
+
+        /* if(273 < 100){ // if문 안의 조건이 거짓이기 때문에
+            alert('true');  // if문 안 내용을 실행 못 함.
+        } // alert : 안에 넣은 데이터를 팝업으로 출력해줌
+
+        if(!273 < 100){ // ! 를 넣으면 부정문이 되기 때문에 결과가 참으로 나옴.(273이 100보다 작다는게 거짓(부정)이 맞기 때문에)
+            alert('true'); // if문이 참이므로 안의 true가 출력됨
+        }
+
+        if(273 > 100){ // if문이 참이기 때문에 안의 second true 출력됨
+            alert('second true'); 
+        }
+
+        if('yedam' === 'yedam'){
+            //실행문
+        }
+
+        alert('프로그램 종료'); */
+
+
+
+         // 현재 시간을 가져오기 위해 쓰는 기능
+        const date = new Date();
+        const hour = date.getHours();
+
+        // 현재 시간을 가져옴
+        alert(hour + "시 입니다.");
+
+        // 12 보다 작은 수(오전)
+        if(hour < 12){
+            alert('오전입니다.');
+        }
+
+        // 12 보다 큰 수(오후)
+        if(hour > 12){
+            alert('오후입니다.');
+        } 
+
+
+        if(hour < 12){
+            alert('오전입니다.');
+        } else {
+            alert('오후입니다.');
+        }
+
+        // 성적을 출력하는 예제
+        // 점수를 입력하면 -> A, B, C, D 출력
+        // A : 90점 이상
+        // B : 80점 이상
+        // C : 70점 이상
+        // D : 60점 이상
+
+        let point = prompt("점수를 입력하세요");
+    
+    /*  if(point >= 90){
+            alert("A 학점입니다.");
+        }
+        if(point < 90 && point >= 80){
+            alert("B 학점입니다.");
+        }
+        if(point < 80 && point >= 70){
+            alert("C 학점입니다.");
+        }
+        if(point < 70 && point >= 60){
+            alert("D 학점입니다.");
+        } */
+
+        // if(point >= 90){
+        //     alert("A 학점입니다.");
+        // } else if(point < 90 && point >= 80){
+        //     alert("B 학점입니다.");
+        // } else if(point < 80 && point >= 70){
+        //     alert("C 학점입니다.");
+        // } else if(point < 70 && point >= 60){
+        //     alert("D 학점입니다.");
+        // } else {
+        //     alert("낙제입니다.");
+        // }
+
+        // 위랑 같은 실행이 됨!
+        // 위에서 이미 90보다 작다고 검증이 됐기 때문에 굳이 point < 90 && point >= 80 이렇게 적을 필요가 없음
+        if(point >= 90){
+            alert("A 학점입니다.");
+        } else if(point >= 80){
+            alert("B 학점입니다.");
+        } else if(point >= 70){
+            alert("C 학점입니다.");
+        } else if(point >= 60){
+            alert("D 학점입니다."); // 66점이라고 했을 때 위 실행문은 비교를 7번 해야하고, 아래는 4번만 비교하면 됨
+        } else {
+            alert("낙제입니다.");
+        }
+
+        if(point <= 60){ // 0 ~ 59 까지는 낙제가 되고 59보다 크면 만족 못 하므로 밑으로 내려감
+            alert('낙제입니다.');
+        } else if (point < 70){ // 60 ~ 69
+            alert('D 학점입니다.');
+        } else if(point < 80){ // 70 ~ 79
+            alert('C 학점입니다.');
+        } else if(point < 90){ // 80 ~ 89
+            alert('B 학점입니다.');
+        } else{
+            alert('A 학점입니다.');
+        }
+
+
+        // 홀수, 짝수 판단하기
+        // 10 % 2 == 0
+        // 6 % 2 == 0
+        // 4 % 2 == 0 받은 데이터를 2로 나눠서 나머지가 0이 나오면 짝수일것!
+
+        // 3 % 2 == 1
+        // 11 % 2 == 1
+        // 7 % 2 == 1 2로 나눴을 때 나머지가 1이 나오면 홀수
+
+        let num = prompt("숫자를 입력하세요");
+        if(num % 2 == 0){
+            alert("짝수 입니다.");
+        }
+        if(num % 2 == 1){
+            alert("홀수 입니다.");
+        }
+
+
+        // if ~ else
+    /* if(표현식){
+            true일 경우 실행문
+        } else{
+            참이 아닐 경우 실행하는 구문
+        } */
+
+        if(273 < 100){ // 거짓이기 때문에 false가 나옴. if문은 실행 안 되고 else문이 실행될 것.
+            alert('true');
+        } else{
+            alert('false');
+        }
+
+        // if~else를 if문으로만 표현하려면 if문을 두번 적어야 함
+        if(273 < 100){ 
+            alert('true'); 
+        }
+        if(273 > 100){ 
+            alert('false'); 
+        }
+
+        // if ~ else if ~ else 표현식의 개수는 제한 없음
+      /* if(표현식){
+            true일 경우 실행문
+        } else if(표현식){
+            true일 경우 실행문
+        } else if(표현식){
+            true일 경우 실행문
+        } else if(표현식){
+            true일 경우 실행문
+        } else {
+            모든 if, else if문이 참이 아닐 경우 실행문
+        } */ // 표현식을 실행하다 참인 실행문을 만나면 이후 실행문들은 하지 않고 if문 밖으로 나오게 됨
+
+
+        // 진짜 마지막 if문..ㅎ
+        // 중첩 if문
+     /* if(표현식){
+            참일 경우 실행하는 공간
+            if(표현식){
+                if문 안에 if문을 또 넣는 것 : 중첩 if문
+            }
+        } */
+
+        // 2의 배수(비교1)이고 5의 배수(비교2)이면 참이라고 출력하시오.
+        let number4 = prompt("수를 입력하세요");
+
+        if(number4 % 2 == 0){
+            document.write("<h1>2의 배수 조건 만족</h1>"); // if문 사이에도 내가 원하는 내용 부가적으로 쓸 수 있음
+            if(number % 5 == 0){
+                alert("2의 배수이고 5의 배수인 숫자 : " + number4);
+            } else{
+                alert("2의 배수이지만 5의 배수는 아님 + ")
+            }
+        } else{
+            alert("2의 배수가 아님 : " + number4)
+        }
+        // 중첩은 한 번만 가능한게 아니라 여러번 가능!
+        //if~else, if ~ else if ~ else 둘 다 가능!\
+
+
+
+        // 간단한 ID / PW 확인 절차
+        let id = "yedam";
+        let pw = "1234";
+
+        let userId = prompt("아이디는?");
+        let userPw = prompt("비밀번호는?");
+
+        if(id == userId){ // id를 먼저 비교
+            if(pw == userPw){ // 중첩 if문으로 pw비교 (중첩 if문을 쓰면 어디에서 틀린건지 알 수 있음)
+                document.write(userId + "님 반갑습니다.");
+            } else{
+                alert(userId + "님 비밀번호가 틀렸습니다.");
+                location.reload(); // 페이지 재시작(id, pw 다시 쓸 수 있게 prompt로 돌아감)
+            } 
+        } else{
+            alert("아이디가 틀렸습니다.");
+            location.reload(); // 페이지 재시작
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable</title>
+</head>
+<body>
+    <script>
+        console.log(number2); 
+        /* 웹에서 F12하면 undefind라고 뜸. 들어있는 값이 없기 때문에(호이스팅).
+            초기화를 하지 않아도 사용은 가능 */
+
+        // console.log(number);
+
+        let number = 1; /* = 대입연산자. 오른쪽 값을 왼쪽에 넣어준다는 뜻 */
+        /* 넘버라는 변수에 1을 넣어 변수 초기화를 시켜줌
+            최초로 데이터를 넣는걸 초기화한다고 함.
+            1로 변수 초기화 한 것. */
+        console.log(number);
+        number = 2; // 1이라는 값을 2로 덮어쓰기. number는 이제 2를 의미
+        number = 3; // 3으로 덮어쓰기
+        /* 하나의 변수에 여러 값을 넣어 재사용 가능(재사용성) */
+        /* 컴퓨터는 오->왼으로 읽음. 오른쪽을 실행하고 왼쪽에 넣고.
+            ex) 숫자 3을 number에 대입한다. */
+
+        /* 의미있는 단어를 변수로 사용하는 것이 좋음(목적에 따라 변수 네이밍하기)
+                ex) 숫자를 넣을 거라면 number
+            변수와 함수 이름은 무조건 소문자로 시작!!
+            합성어로 의미를 부여해야 한다면 두번째 단어를 대문자로 하면 됨 (카멜 표기법. 프로그래밍에서의 관습)
+                ex)학생수 studentCount = 1;
+            변수 첫 글자는 숫자 불가능, 뒤에는 쓸 수 있음 */
+
+        var number2 = 2;
+        console.log(number2);
+       /* 변수는 위->아래 순서. 원래는 console이 실행 안 되겠지만
+            var는 아무곳에나 쓰여있기만 하면 실행 가능. (호이스팅이라고 함)
+            코드가 길어지면 아무 내용이나 가져와서 실행하는 오류가 발생할 수 있기 때문에
+            웬만하면 쓰지 말기!
+            let은 17, 21번처럼 적어야 실행됨.
+            15, 17번 처럼 선언 전에 console.log가 적혀있다면 실행X */
+
+        const number3 = 10;
+        // number3 = 100;
+        /* const는 한 번 지정한 수를 바꿀 수 없음. ex) 10 지정하고 100으로 바꾸면 오류 남 */
+
+
+        // 원시형 데이터 타입
+        // 1. 숫자형 : 변수에 숫자가 들어가는 경우
+        let num = 1;
+        let num2 = 2; // 변수 이름은 중복 불가능. (num이 2개가 될 수 없음)
+        console.log(typeof num); // typeof는 console창에 실행하면 저 변수가 어떤 타입인지 알려줌
+
+        // 2. 문자형 : 변수에 문자가 들어가는 경우
+        let str = 'javascript'; // 문자 선언시 '' 또는 "" 사용 (str는 string의 약어)
+        let str2 = "javascript";
+        let str3 = "12345"; // 이건 문자! 문자를 숫자로 바꿀 수 있음(잘 사용은 안 하지만..)
+        // 문자 -> 숫자 -> 문자로는 많이 씀
+        console.log(typeof str);
+
+        // 3. 불리언 (bool) : true / false만 존재, 참 거짓 판단할 때 사용
+        let bool = true; // 넣을 수 있는 데이터가 true, false 두 가지 뿐!
+        bool = false;
+        console.log(typeof bool);
+
+        // 4. 심볼 : 거의 안 씀. 어려운 내용..
+
+        // 5. null : 빈 값(변수를 초기화하지 않았다)
+        let variable; // 데이터가 없음(값이 0이 아니라 비어 있는 값임) console창으로 보면 null이라 뜸
+                      // let variable = null; 이라고 적을수도 있음
+        console.log(variable); // typeof 적으면 undefined가 진하게 표시됨(왜..?)
+
+        // 6. underfined : 변수 자체가 아예 선언되지 않음
+        console.log(data); // 선언한 변수가 없는데 사용하게 되면 console창에서 underfined라고 뜸
+
+        // 7. NaN : not a number (숫자가 아니다)
+        // 문자 -> 숫자로 바꾸는데, 숫자 외 다른 문자가 있을때 NaN이라고 표시됨
+
+
+
+        // 참조형 데이터 타입
+        // 위 7가지 제외 모두! 주소를 참조해 주소에서 데이터를 가져오는 방법.
+        // 변수에 데이터가 바로 들어있는게 아니라, 메모리 주소(주소값)를 넣고 메모리 주소에 가서 데이터를 가져오는 방식
+        /* 원시형, 참조형의 큰 차이점: 메모리 체계가 다름 */
+
+
+        // 자료형 변환
+        // 문자 -> 숫자로 변환
+        // 예시는 change.html 참고
+    </script>
+</body>
+</html>

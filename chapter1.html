@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print</title>
+</head>
+<body>
+    <!-- html 태그 주석 -->
+    <script>
+    // prompt 1. 팝업을 띄웠을 때 텍스트로 보여지는 내용
+    /* js에서의 변수란?
+        변수에 어떤 데이터를 넣냐에 따라 성질이 달라짐.
+        숫자를 넣으면 숫자 타입 변수, 문자를 넣으면 문자 타입 변수,
+        참/거짓을 판단하는 변수도 됨.
+        변수에 성질을 줄 수 있음 -> let sign: sign 변수에 let 성질을 줌
+
+        미리 매개체(데이터)를 담아놓지 않으면
+
+        아래 줄의 변수: sign
+        ex) 겉으로 보이는 컵=sign, 
+            안에 든 물=데이터(커피, 주스 등 다양한 것을 넣을 수 있음) */
+
+    /* let sign 뒤에 들어있는 =~를 표현식이라고 함.
+        ;를 기준으로 한 문장을 구별함(마침표의 역할)
+        (자바스크립트는 유연한 언어라 ; 유무가 관계없지만, 다른 언어에선 ; 없을 시 오류 날 수 있으니 주의)
+        자바스크립트는 '' ""도 구분 안 함 (자바는 함!!!!!!!) */
+        let sign = prompt("당신의 별자리는 무엇입니까?");
+        if(sign.toLowerCase() === "전갈자리"){
+        alert("저도 전갈자리입니다!");
+    }
+    sign = window.prompt();
+    sign = prompt();
+    // 둘은 같은 명령! (window생략 가능)
+    console.log(sign);
+    sign = window.prompt("오늘 너무 춥습니까?", "네");
+    /* 앞에 적은 내용은 질문창에 띄우는 것
+        ,를 사용해 뒤에 넣은 내용은 입력칸에 미리 출력해줌 */
+    document.write("<input type=input value='123'>");
+    let str = "<input type=input value='123'>";
+    str += "<h1>테스트</h1>"; // +=를 이런식으로 사용해 여러 태그가 합쳐진 문자열을 화면에 표시할수도 있음
+
+
+
+</script>
+</body>
+</html>
