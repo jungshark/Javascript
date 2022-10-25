@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문-while문</title>
+</head>
+<body>
+    <script>
+        // 🐣 while 반복문
+        // 표현식이 참일 경우 계속 반복됨
+        // while(표현식){
+
+        // }
+
+        // for문에서 가운데 조건에 while문이 들어간다고 생각
+        // for(let i=1; i<=5; i++){} 여기서 두번째 i<=5 부분! (?)
+
+
+        // 덧셈, 짝수, 홀수
+
+        // 1~10까지 더하기
+        // let sum = 0;
+        // // while(true){ 
+        //     while(sum<10){ // 위에 지정한 변수(sum)가 0이기 때문에 아래 반복문(sum=sum+1;) 실행. 계속 돌아가다가 sum이 11이 되면 조건 만족이 안 되기 때문에 반복 끝내고 아래 console로 넘어감
+        //     // let sum = 0; // 반복문 안에 변수를 지정하게 되면 한 번 마치고 돌아왔을 때 다시 '새로운 변수'로 만들어짐. 무한루프 걸림... 주의!
+        //     sum = sum + 1;
+        //     // if(sum >= 10){ 
+        //     //     break;
+        //     // }
+        // }
+        // console.log(sum);
+
+
+
+
+        let sumone = 0;
+        while(true){ // 조건이 참일때 항상 반복이 됨. 그래서 보통 true라고는 안 쓰고 안에 조건을 써 줌. 참이면 돌아가니까!
+            sumone = sumone + 1;
+            if(sumone >= 10){ // while(true)랑 같이 쓸 때 사용. sum이 10이 되면 break로 반복문 마침.
+                break; 
+            }
+        }
+        console.log(sumone);
+
+
+
+        let flag = true; // bool 하나 만듦
+        sumtwo=0;
+        while(flag){ // flag는 항상 참이니까 계속 실행됨
+            sumtwo = sumtwo+1; // sumtwo가 10이 아닐때는 계속 1을 더함
+            if(sumtwo==10){ // 10이 되면
+                flag = false; // flag를 false로 바꿈 -> 위로 가서 while문에 가면 flag가 false이기 때문에 참이 아니므로 while문 종료!
+            }
+        }
+        console.log(sumtwo);
+
+
+        // 🐣 1~100까지 수 중에서 짝수만 출력 -> 이거 뭔가 무한루프 걸린다..........확인하기
+        // let even = 0; // 1) 0이 출력되지 않게 하는 방법 : even을 1로 바꾸기
+        // while(even <= 100){
+        //     if(even % 2 == 0 && even != 0){ // 2) 0이 출력되지 않게 하는 방법 : even이 0이 아닐때를 제외하고 나머지는 출력하기
+        //         console.log("1~100사이의 짝수 : "+even);
+        //     }
+        //     even++;
+        // }
+
+        // 🐣 팩토리얼을 구하는 반복문을 작성하세요.
+
+        // 🐣 구구단 2단 출력하기
+        // let gugudan = 2;
+        // let num = 1;
+        // while(num <= 9){
+        //     console.log(gugudan + "*" + num + "=" + gugudan*num);
+        //     num++;
+        // }
+
+
+        // 🐣 while문으로 메뉴 고르기
+        // flag = true;
+        // while(flag){
+        //     // 메뉴를 출력해주는 무언가를 삽입
+        //     let sign = prompt("메뉴를 선택하세요."); // 1~4중 하나를 적으면 구구단/홀수/짝수 구하는 법 혹은 종료(4)를 나타내게 됨
+        //     switch(sign){
+        //         case 1:
+        //         // 구구단 구하는 방법
+        //             break; 
+        //         case 2:
+        //         // 홀수 구하는 방법
+        //             break; 
+        //         case 3:
+        //         // 짝수 구하는 방법
+        //             break; 
+        //         case 4:
+        //         // 종료
+        //         flag=false;
+        //             break; 
+        //     }
+        // }
+        // while문 안에서 예제 실행
+        // console.log(sum); // log안은 실행할 무언가를 넣으면 됨
+
+
+
+        // 🐣 do~while: 무조건 1번 실행하고 조건을 확인함, while문을 뒤집어놨다고 생각하면 됨(?)
+        // do{
+
+        // }while()
+        sum = 0;
+
+        do{
+            sum = sum + 1;
+        }while(sum < 1)
+
+
+        // 🐣 1~100까지 숫자의 합을 구해보는 do~while
+        sum = 0; // 더한 연산을 담아줄 sum 변수 (변수 초기화 존재)
+        let temp = 1; // 증가하는 숫자를 나타내 줄 temp 변수
+        do{
+            sum = sum + temp;
+            temp++; // 증감문 존재
+        }while(sum < 100) // 조건 존재
+        console.log(sum);
+    </script>
+</body>
+</html>
